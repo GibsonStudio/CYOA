@@ -11,9 +11,9 @@ nodes.push(node);
 
 var node = new Node({ id:"back-to-sleep" });
 node.addText("You try and go back to sleep but the noise is keeping you awake.");
-node.addText("You decide to get up. Do you....");
-node.addOption("go into Mummy and Daddy's room", "mummy-and-daddy-room");
-node.addOption("go downstairs and investigate", "go-downstairs");
+node.addText("You decide to get up.");
+node.addOption("Go into Mummy and Daddy's room", "mummy-and-daddy-room");
+node.addOption("Go downstairs and investigate", "go-downstairs");
 nodes.push(node);
 
 
@@ -98,7 +98,7 @@ node.addText("The girl wakes with a start and screams. She is not happy...");
 node.addText("She starts kicking and punching at you.", { action:"player.injure(20)" });
 node.addText("You realize that the girl is your sister, oh no!");
 node.addOption("Run back to your bedroom", "run-to-bedroom");
-node.addOption("Stop quirting and say sorry", "stop-squirting");
+node.addOption("Stop squirting and say sorry", "stop-squirting");
 nodes.push(node);
 
 
