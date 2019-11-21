@@ -10,18 +10,23 @@ function Node (args) {
   this.action = args.action || ''; // code to execute when node is loaded
 
 
-  this.addText = function (text, condition = "", action = "")
+  this.addText = function (text, args)
   {
 
+    var args = args || {};
+    var condition = args.condition || "";
+    var action = args.action || "";
     var t = new nodeText({ text:text, condition:condition, action:action });
     this.text.push(t);
 
   }
 
 
-  this.addOption = function (optionText, nodeId, condition = '')
+  this.addOption = function (optionText, nodeId, args)
   {
 
+    var args = args || {};
+    var condition = args.condition || "";
     var o = new Option({ text:optionText, nodeId:nodeId, condition:condition });
     this.options.push(o);
 
