@@ -1,4 +1,6 @@
 
+//TODO - change functions to use args rather than list of params
+
 var nodes = new Array();
 var player = new Player();
 
