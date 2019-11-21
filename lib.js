@@ -24,25 +24,8 @@ function goNode (nodeId)
 
   var node = getNodeById(nodeId);
 
-  $('#text').html(node.text);
-
-  // options
-  var options = node.options;
-  var optionsHtml = '';
-
-  for (var i = 0; i < node.options.length; i++) {
-
-    var html = '<div class="nodeOption" onclick="goNode(\'' + node.options[i].nodeId + '\')">' + node.options[i].text + '</div>';
-
-    if (node.options[i].linkToVar) {
-      if (worldVars[node.options[i].linkToVar]) { optionsHtml += html; }
-    } else {
-      optionsHtml += html;
-    }
-
-  }
-
-  $('#options').html(optionsHtml);
+  $('#text').html(node.getText());
+  $('#options').html(node.getOptions());
 
   // node actions?
   if (node.action) {
