@@ -1,7 +1,7 @@
 
 
 var node = new Node({ id:"start" });
-node.addText("It's Saturday morning. <br /><br /> You wake up early and can here lots of noise downstairs.");
+node.addText("It's Saturday morning. <br /><br /> You wake up early and can hear lots of noise downstairs.");
 node.addText("What do you do?");
 node.addOption('Go back to sleep', "back-to-sleep");
 node.addOption("Go into Mummy and Daddy's room", "mummy-and-daddy-room");
@@ -18,7 +18,7 @@ nodes.push(node);
 
 
 var node = new Node({ id:"mummy-and-daddy-room" });
-node.addText("Mummy and Daddy are both asleep.<br /><br />Who do you want to do?");
+node.addText("Mummy and Daddy are both asleep.<br /><br />What do you want to do?");
 node.addOption("Leave them alone and go downstairs", "go-downstairs");
 node.addOption("Wake Mummy", "wake-mummy");
 node.addOption("Wake Daddy", "wake-daddy");
@@ -113,6 +113,56 @@ var node = new Node({ id:"poke-girl" });
 node.addText("You poke the girl and she rolls over - It's your sister!");
 node.addOption("Squirt her in the face!", "squirt-girl", { condition:"player.hasItem('water-pistol')" });
 node.addOption("Turn Netflix off", "turn-netflix-off-2");
+node.addOption("Sit down and watch Netflix", "watch-netflix");
+nodes.push(node);
+
+
+var node = new Node({ id:"watch-netflix" });
+node.addText("You start watching Friends and laugh loudly at Joey doing jazz-hands.");
+node.addText("You feel a rumble in your tummy, and need to fart.");
+node.addOption("Let rip", "do-a-fart");
+node.addOption("Go to the toilet", "go-to-toilet");
+nodes.push(node);
+
+
+var node = new Node({ id:"go-to-toilet" });
+node.addText("You sit on the toilet and start to poo.");
+node.addText("You do lots of squidgy, smelly poos and fill the toilet.");
+node.addText("Oh no! There is no toilet paper.");
+node.addOption("Don't wipe", "dont-wipe");
+node.addOption("Shout out and ask for some paper", "shout-out");
+nodes.push(node);
+
+
+
+var node = new Node({ id:"dont-wipe" });
+node.addText("You don't wipe - you don't care if you smell.");
+node.addText("You lose 30 health points.");
+node.addText("You go back into the lounge and settle down with your sister.");
+node.addOption("Go back into the lounge", "watch-friends");
+node.action = "player.injure(30);";
+nodes.push(node);
+
+
+var node = new Node({ id:"shout-out" });
+node.addText("\"Help, I need bum-wipe!\", you shout.");
+node.addText("No one comes to help.");
+node.addOption("Don't wipe", "dont-wipe");
+nodes.push(node);
+
+
+
+var node = new Node({ id:"do-a-fart" });
+node.addText("You lean on one bum-cheeck and let a ripper go.");
+node.addText("You wake up the girl - it's your sister!");
+node.addText("You both laugh and hold your noses - it was a stinker!");
+node.addOption("Watch Friends with your sister", "watch-friends");
+nodes.push(node);
+
+
+var node = new Node({ id:"watch-friends" });
+node.addText("You snuggle up with your sister and enjoy a marathon session of Friends.");
+node.addText("I wonder what adventures you will have tomorrow.");
 nodes.push(node);
 
 
