@@ -1,0 +1,23 @@
+
+
+
+body {
+  font-family:"Arial";
+}
+
+
+
+#text {
+  margin-bottom:20px;
+}
+
+
+#options {
+}
+
+
+.nodeOption {
+  width: 200px; padding:10px; margin-bottom:10px;
+  border:1px solid #666666; color:#666666; background-color:#f2f2f2;
+  cursor:pointer;
+}
