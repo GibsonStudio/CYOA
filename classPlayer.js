@@ -28,4 +28,24 @@ function Player (args) {
   }
 
 
+  this.giveItem = function (itemName)
+  {
+    if (this.items.indexOf(itemName) < 0) {
+      this.items.push(itemName);
+    }
+  }
+
+
+
+
+  this.hasItem = function (itemName)
+  {
+    if (this.items.indexOf(itemName) > -1) { return true; }
+    return false;
+  }
+
+
+
+
+
 }

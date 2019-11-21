@@ -2,6 +2,10 @@
 var nodes = new Array();
 var player = new Player();
 
+var worldVars = [];
+worldVars['mummy-asleep'] = true;
+worldVars['daddy-asleep'] = true;
+
 function init ()
 {
 
@@ -28,7 +32,13 @@ function goNode (nodeId)
 
   for (var i = 0; i < node.options.length; i++) {
 
-    optionsHtml += '<div class="nodeOption" onclick="goNode(\'' + node.options[i].nodeId + '\')">' + node.options[i].text + '</div>';
+    var html = '<div class="nodeOption" onclick="goNode(\'' + node.options[i].nodeId + '\')">' + node.options[i].text + '</div>';
+
+    if (node.options[i].linkToVar) {
+      if (worldVars[node.options[i].linkToVar]) { optionsHtml += html; }
+    } else {
+      optionsHtml += html;
+    }
 
   }
 
