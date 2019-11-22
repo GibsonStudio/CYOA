@@ -16,7 +16,7 @@ function Player (args) {
   {
 
     this.health = Math.max(this.health - damage, 0);
-    console.log(this.health);
+    this.update();
     if (this.health <= 0) { this.die(); }
 
   }
@@ -33,9 +33,18 @@ function Player (args) {
     if (this.items.indexOf(itemName) < 0) {
       this.items.push(itemName);
     }
+    this.update();
   }
 
 
+  this.removeItem = function (itemName)
+  {
+    var index = this.items.indexOf(itemName);
+    if (index >= 0) {
+      this.items.splice(index, 1);
+    }
+    this.update();
+  }
 
 
   this.hasItem = function (itemName)
@@ -45,6 +54,22 @@ function Player (args) {
   }
 
 
+
+  this.update = function ()
+  {
+
+    $('#player-health').html(this.health);
+
+    var html = "";
+
+    for (var i = 0; i < this.items.length; i++) {
+      if (html.length > 0) { html += "<br />"; }
+      html += this.items[i];
+    }
+
+    $("#player-items").html(html);
+
+  }
 
 
 

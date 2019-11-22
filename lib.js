@@ -12,6 +12,7 @@ function init ()
 {
 
   goNode('start');
+  player.update();
   console.log("OK");
 
 }
